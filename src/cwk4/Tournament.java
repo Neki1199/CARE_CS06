@@ -187,7 +187,10 @@ public class Tournament implements CARE
      public boolean isChallenge(int num)
      {
          Challenge challengeNo = getAChallenge(num);
-         return challengeNo != null;
+         if(challengeNo != null){
+             return true;
+         }
+         return false;
      }    
    
     /** Provides a String representation of a challenge given by
