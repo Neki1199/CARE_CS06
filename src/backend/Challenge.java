@@ -50,4 +50,11 @@ public class Challenge
     {
         return reward;
     }
+
+    public String toString(){
+
+        return "***Challenge details***\nChallenge No: " + getNumber() + "\nChallenge type: " +
+                getType() + "\nEnemy name: " + getEnemy() + "\nSkill level: " +
+                getSkill() + "\nReward: " + getReward() + "\n";
+    }
 }
