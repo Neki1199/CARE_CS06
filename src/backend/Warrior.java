@@ -11,12 +11,10 @@ public class Warrior extends Champion
 
     /**
      * Constructor for objects of class Warrior
-    * @param name champion's name
         * @param name champion's name
         * @param cost champion's cost
         * @param weapon is the champion's signature weapon
     
-    * @return true if champion in reserve, false otherwise
     */
     public Warrior(String name, int cost, String weapon)
     {
