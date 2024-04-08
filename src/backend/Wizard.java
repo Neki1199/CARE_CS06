@@ -1,15 +1,13 @@
 package backend;
-
-
 /**
- * Write a description of class Wizard here.
+ * A class representing the wizard object inheriting from Champion
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Thomas)
+ * @version (08/04/24)
  */
 public class Wizard extends Champion
 {
-    // instance variables - replace the example below with your own
+
     private String spell;
     private boolean necromancer;
 
@@ -23,45 +21,62 @@ public class Wizard extends Champion
         
         if (necromancer)
         {
-            this.setCost(400);
+            this.cost = 400;
         }
         else
         {
-            this.setCost(300);
+            this.cost = 300;
         }
     }
 
-    /**
-     * Method to get the spell of the wizard
-     */
+    /**Returns a String name the wizards spell
+     * @return a String of spell
+     **/
     public String getSpell() 
     {
         return spell;
     }
-    
+
+    /**Returns a Boolean of if the wizard is a necromancer
+     * @return a Boolean of necromance
+     **/
+    public boolean isNecromancer() 
+    {
+        return necromancer;
+    }
+
+    /**Returns a Boolean denoting if the champion can complete a magic task
+     * @return a Boolean of true
+     **/
     public boolean getMagic()
     {
          return true;   
     }
-    
+
+    /**Returns a Boolean denoting if the champion can complete a magic task
+     * @return a Boolean of true
+     **/
     public boolean getFight()
     {
          return true;   
     }
-    
+
+    /**Returns a Boolean denoting if the champion can complete a magic task
+     * @return a Boolean of true
+     **/
     public boolean getMystery()
     {
          return true;   
     }
 
-    /**
-     * Method to check if the wizard is a necromancer
-     */
-    public boolean isNecromancer() 
-    {
-        return necromancer;
-    }
-    
+        /**Returns a String representation of the state of the wizard objects,
+         * including the name of the champion, their cost,
+         * What its skill level is, the name of its signature spell, and whether it's a necromancer 
+         * 
+         * @return a String representation of the state of the objects,
+         * including the name of the champion, their cost,
+         * What its skill level is, the name of its signature spell, and whether it's a necromancer 
+         **/
     public String toString()
     {
         return "Wizard (name='" + getName() + "', cost=" + getCost() + ", skillLevel=" + getSkillLevel() +
