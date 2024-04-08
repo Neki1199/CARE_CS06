@@ -19,39 +19,51 @@ public abstract class Champion
     protected Champion(String name, int cost, int skillLevel) 
     { 
         this.name = name;
-        
+        this.cost = cost;
+        this.skillLevel = skillLevel;
     }
-
+    
+    /**Returns a String of the object's Name.
+     *
+     * @return a String representation of the object's Name.
+     **/
     public String getName()
     {
-        return name;
+        return this.name;
     }
-    
-    public void setCost(int cost)
-    {
-        this.cost = cost;
-    }
-    
+
+    /**Returns a int of the object's Cost.
+     *
+     * @return a int representation of the object's Cost.
+     **/
     public int getCost()
     {
-        return cost;
+        return this.cost;
     }
     
-    public void setSkill(int skill)
-    {
-        this.skillLevel = skill;
-    }
-    
+     /**Returns a int of the object's Skill level.
+     *
+     * @return a int representation of the object's skill Level.
+     **/
     public int getSkillLevel()
     {
-        return skillLevel;
+        return this.skillLevel;
     }
-    
+
+     /**An abstract class that will return a boolean for if the class can do something.
+     **/
     public abstract boolean getMagic();
-    
+
+     /**An abstract class that will return a boolean for if the class can do something.
+     **/
     public abstract boolean getFight();
-    
+
+     /**An abstract class that will return a boolean for if the class can do something.
+     **/
     public abstract boolean getMystery();
-    
+
+    /**Will return a String representation of the details of the champion,
+     * including the Whatever attributes the child class has
+     **/
     public abstract String toString();
 }
