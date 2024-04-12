@@ -13,8 +13,9 @@ import java.io.*;
 
 public class Tournament implements CARE
 {
-   
     private String vizier;
+    private int treasury;
+
     private ArrayList<Challenge> challenges = new ArrayList<Challenge>();
 
 
@@ -24,10 +25,10 @@ public class Tournament implements CARE
      */  
     public Tournament(String viz)
     {
-      
-        
-       setupChampions();
-       setupChallenges();
+        this.vizier = viz;
+        this.treasury = 1000;
+        setupChampions();
+        setupChallenges();
     }
     
     /** Constructor requires the name of the vizier and the
@@ -37,10 +38,10 @@ public class Tournament implements CARE
      */  
     public Tournament(String viz, String filename)  //Task 3.5
     {
-      
-        
-       setupChampions();
-       readChallenges(filename);
+        this.vizier = viz;
+        this.treasury = 1000;
+        setupChampions();
+        readChallenges(filename);
     }
     
     
@@ -56,7 +57,7 @@ public class Tournament implements CARE
      **/
     public String toString()
     {
-        String s = "\nVizier: " + vizier ;
+        String s = "\nVizier: " + this.vizier ;
         
         return s;
     }
@@ -214,7 +215,7 @@ public class Tournament implements CARE
     public String getAllChallenges()
     {
         String s = "\n************ All Challenges ************\n";
-        for(Challenge tempChal: challenges){
+        for(Challenge tempChal: this.challenges){
             String chalInfo = tempChal.toString();
             s += chalInfo + "\n";
         }
@@ -222,7 +223,7 @@ public class Tournament implements CARE
     }
     
     
-       /** Retrieves the challenge represented by the challenge 
+    /** Retrieves the challenge represented by the challenge 
      * number.Finds a champion from the team who can meet the 
      * challenge. The results of meeting a challenge will be 
      * one of the following:  
@@ -256,7 +257,6 @@ public class Tournament implements CARE
 
     /** Add challenges into an ArrayList */
     private void setupChallenges()
-
     {
         Challenge c1 = new Challenge(1, "Magic", "Borg", 3, 100);
         Challenge c2 = new Challenge(2, "Fight", "Huns", 3, 120);
@@ -271,8 +271,7 @@ public class Tournament implements CARE
         Challenge c11 = new Challenge(11, "Magic", "Celt", 2, 250);
         Challenge c12 = new Challenge(12, "Mystery", "Celt", 1, 250);
 
-        Collections.addAll(challenges, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12);
-
+        Collections.addAll(this.challenges, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12);
     }
 
     /** Returns a challenge with the challenge no specified by the parameter
@@ -280,7 +279,7 @@ public class Tournament implements CARE
      **/
      private Challenge getAChallenge(int no)
      {
-        for(Challenge tempChal: challenges){
+        for(Challenge tempChal: this.challenges){
             int tempChalNo = tempChal.getNumber();
             if(tempChalNo == no){
                 return tempChal;
@@ -306,8 +305,22 @@ public class Tournament implements CARE
      * @param filename of the comma-separated textfile storing information about challenges
      */
     public void readChallenges(String filename)
-    { 
-        
+    {   
+        String line;
+        String splitOn = ",";
+        int challengeID = 1;
+
+        try{
+            BufferedReader br = new BufferedReader(new FileReader(filename)); // Parse CSV
+
+            while((line = br.readLine()) != null){
+                String[] chal = line.split(splitOn);
+                this.challenges.add(new Challenge(challengeID, chal[0], chal[1], Integer.parseInt(chal[2]), Integer.parseInt(chal[3])));
+                challengeID++;
+            }
+        } catch(IOException e){
+            System.out.println("File does not exist.");
+        }
     }   
     
      /** reads all information about the game from the specified file 
