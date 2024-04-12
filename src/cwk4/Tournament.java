@@ -327,8 +327,6 @@ public class Tournament implements CARE
      */
    public void saveGame(String fname){
         // uses object serialisation 
-        // hooplah
-        // hooplah
     }
  
 
