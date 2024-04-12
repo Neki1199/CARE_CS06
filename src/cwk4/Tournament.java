@@ -1,4 +1,6 @@
 package cwk4;
+import backend.*;
+
 import java.util.*;
 import java.io.*;
 /**
@@ -13,6 +15,7 @@ public class Tournament implements CARE
 {
    
     private String vizier;
+    private ArrayList<Challenge> challenges = new ArrayList<Challenge>();
 
 
 //**************** CARE ************************** 
@@ -183,10 +186,14 @@ public class Tournament implements CARE
      **/
      public boolean isChallenge(int num)
      {
-         return (false);
+         Challenge challengeNo = getAChallenge(num);
+         if(challengeNo != null){
+             return true;
+         }
+         return false;
      }    
    
-    /** Provides a String representation of an challenge given by 
+    /** Provides a String representation of a challenge given by
      * the challenge number
      * @param num the number of the challenge
      * @return returns a String representation of a challenge given by 
@@ -194,8 +201,10 @@ public class Tournament implements CARE
      **/
     public String getChallenge(int num)
     {
-        
-        
+        Challenge challengeToGet = getAChallenge(num);
+        if(challengeToGet != null){
+            return challengeToGet.toString();
+        }
         return "\nNo such challenge";
     }
     
@@ -205,7 +214,10 @@ public class Tournament implements CARE
     public String getAllChallenges()
     {
         String s = "\n************ All Challenges ************\n";
-       
+        for(Challenge tempChal: challenges){
+            String chalInfo = tempChal.toString();
+            s += chalInfo + "\n";
+        }
         return s;
     }
     
@@ -241,19 +253,41 @@ public class Tournament implements CARE
         
 
    }
-     
-    private void setupChallenges()
-    {
 
+    /** Add challenges into an ArrayList */
+    private void setupChallenges()
+
+    {
+        Challenge c1 = new Challenge(1, "Magic", "Borg", 3, 100);
+        Challenge c2 = new Challenge(2, "Fight", "Huns", 3, 120);
+        Challenge c3 = new Challenge(3, "Mystery", "Ferengi", 3, 150);
+        Challenge c4 = new Challenge(4, "Magic", "Vandal", 9, 200);
+        Challenge c5 = new Challenge(5, "Mystery", "Borg", 7, 90);
+        Challenge c6 = new Challenge(6, "Fight", "Goth", 8, 45);
+        Challenge c7 = new Challenge(7, "Magic", "Frank", 10, 200);
+        Challenge c8 = new Challenge(8, "Fight", "Sith", 10, 170);
+        Challenge c9 = new Challenge(9, "Mystery", "Cardashian", 9, 300);
+        Challenge c10 = new Challenge(10, "Fight", "Jute", 2, 300);
+        Challenge c11 = new Challenge(11, "Magic", "Celt", 2, 250);
+        Challenge c12 = new Challenge(12, "Mystery", "Celt", 1, 250);
+
+        Collections.addAll(challenges, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12);
 
     }
-        
-    // Possible useful private methods
-//     private Challenge getAChallenge(int no)
-//     {
-//         
-//         return null;
-//     }
+
+    /** Returns a challenge with the challenge no specified by the parameter
+     * @return the challenge with the specified id
+     **/
+     private Challenge getAChallenge(int no)
+     {
+        for(Challenge tempChal: challenges){
+            int tempChalNo = tempChal.getNumber();
+            if(tempChalNo == no){
+                return tempChal;
+            }
+        }
+         return null;
+     }
 //    
 //     private Champion getChampionForChallenge(Challenge chal)
 //     {
