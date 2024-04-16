@@ -4,8 +4,8 @@ package cwk4;
 /**
  * Details of your team
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Thomas B., Yanelky C., Derick O., Frederica T.
+ * @version 16/04/2024
  */
 public class Teamwork
 {
@@ -19,9 +19,9 @@ public class Teamwork
         // before the surname of member 2...etc
         details[0] = "CS06";
         
-        details[1] = "Frederica";
-        details[2] = "Teather";
-        details[3] = "21094244";
+        details[1] = "Beadle";
+        details[2] = "Thomas";
+        details[3] = "22013613";
 
         details[4] = "Castillo Almonte";
         details[5] = "Yanelky";
@@ -32,9 +32,9 @@ public class Teamwork
         details[9] = "21058424";
 
 
-        details[10] = "Beadle";
-        details[11] = "Thomas";
-        details[12] = "22013613";
+        details[10] = "Teather";
+        details[11] = "Frederica";
+        details[12] = "21094244";
 
     }
     

@@ -60,6 +60,6 @@ public class Wizard extends Champion
     public String toString()
     {
         String top = super.toString();
-        return "Wizard: " + top.substring(9, top.length()-1) + ", Necromancer= " + this.necromancer + ", Special Spell= " + this.spell  + ")";
+        return top + "Necromancer: " + this.necromancer + "\nSpecial Spell: " + this.spell + "\nType: Wizard\n";
     }
 }

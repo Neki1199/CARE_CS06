@@ -49,7 +49,7 @@ public class Warrior extends Champion
      **/
     public String toString()
     {
-          String top = super.toString();
-          return "Warrior: " + top.substring(9, top.length()-1) + ", Weapon= " + this.weapon + ")";
+        String top = super.toString();
+        return top + "Weapon: " + this.weapon + "\nType: Warrior\n";
      }
 }
