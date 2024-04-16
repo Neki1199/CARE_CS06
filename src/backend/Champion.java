@@ -6,7 +6,7 @@ import cwk4.ChampionState;
 /**
  * A Base Class which the other champions are built off
  *
- * @author (your name)
+ * @author Thomas B.
  * @version (a version number or a date)
  */
 public abstract class Champion
@@ -38,18 +38,18 @@ public abstract class Champion
         return this.name;
     }
 
-    /**Returns a int of the object's Cost.
+    /**Returns an int of the object's Cost.
      *
-     * @return a int representation of the object's Cost.
+     * @return an int representation of the object's Cost.
      **/
     public int getCost()
     {
         return this.cost;
     }
     
-     /**Returns a int of the object's Skill level.
+     /**Returns an int of the object's Skill level.
      *
-     * @return a int representation of the object's skill Level.
+     * @return an int representation of the object's skill Level.
      **/
     public int getSkillLevel()
     {
@@ -57,7 +57,7 @@ public abstract class Champion
     }
 
     /**An abstract class that Returns a Boolean denoting if the champion can complete a challenge task
-     * @param challenge is a ChallengeType to check for that specific challenge
+     * @param type is a ChallengeType to check for that specific challenge
      * @return a Boolean of false
      **/
     public abstract boolean canMeet(ChallengeType type);
@@ -97,9 +97,9 @@ public abstract class Champion
      * including the name of the champion, their cost,
      * What its skill level is, 
      **/
-     public String toString() 
+     public String toString()
      {
-        return "\nChampion: (Name='" + this.name + "', Cost=" + this.cost + ", SkillLevel=" + this.skillLevel + ", State: " + this.state.toString() + ")";
-    
+        return "***Champion***\nName: " + this.name + "\nCost: " + this.cost + "\nSkill Level: " + this.skillLevel +
+                "\nState: " + this.state.toString() + "\n";
      }
 }

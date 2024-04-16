@@ -44,12 +44,12 @@ public class Dragon extends Champion
          * What it's cost is, and whether it talks 
          * 
          * @return a String representation of the state of the objects,
-         * including the name of the champion, thier cost,
+         * including the name of the champion, their cost,
          * What it's cost is, and whether it talks 
          **/
     public String toString()
     {
-          String top = super.toString();
-          return "Dragon: " + top.substring(9, top.length()-1) + ", Talks= " + this.talks + ")";
+        String top = super.toString();
+        return top + "Talks: " + this.talks + "\nType: Dragon\n";
      }
 }
