@@ -1,4 +1,7 @@
 package backend;
+
+import cwk4.ChallengeType;
+
 /**
  * Write a description of the class Challenge here.
  *
@@ -8,7 +11,7 @@ package backend;
 public class Challenge
 {
     private int number;
-    private String type;
+    private ChallengeType type;
     private String enemy;
     private int skill;
     private int reward;
@@ -21,7 +24,7 @@ public class Challenge
     * @param skill is the champion's skill requirement
     * @param reward is the champion's reward value
     */
-    public Challenge(int number, String type, String enemy, int skill, int reward)
+    public Challenge(int number, ChallengeType type, String enemy, int skill, int reward)
     {
         this.number = number;
         this.type = type;
@@ -41,7 +44,7 @@ public class Challenge
     /**Returns String for challenge type
      * @return string of type expected from [Magic, Fight, Mystery]
      **/
-    public String getType() 
+    public ChallengeType getType() 
     {
         return type;
     }
