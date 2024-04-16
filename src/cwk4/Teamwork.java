@@ -21,7 +21,7 @@ public class Teamwork
         
         details[1] = "Frederica";
         details[2] = "Teather";
-        details[3] = "SRN of member1";
+        details[3] = "21094244";
 
         details[4] = "Castillo Almonte";
         details[5] = "Yanelky";
