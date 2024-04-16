@@ -24,8 +24,8 @@ public class GameUI
             System.out.println("Enter vizier's name");
             String s = myIn.nextLine();
             //myIn.nextLine();
-            tr = new Tournament(s); // create
-            //tr = new Tournament(s,"challengesAM.txt"); // alternative create task 3.5
+            //tr = new Tournament(s); // create
+            tr = new Tournament(s,"challengesAM.txt"); // alternative create task 3.5
             choice = 100;
             while (choice != 0 )
             {

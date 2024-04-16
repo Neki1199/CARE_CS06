@@ -19,8 +19,8 @@ public class Teamwork
         // before the surname of member 2...etc
         details[0] = "CS06";
         
-        details[1] = "Leonie Teather";  
-        details[2] = "Frederica";
+        details[1] = "Frederica";
+        details[2] = "Teather";
         details[3] = "21094244";
 
         details[4] = "Castillo Almonte";

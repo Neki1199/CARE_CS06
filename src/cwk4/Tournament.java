@@ -13,7 +13,6 @@ import java.io.*;
 
 public class Tournament implements CARE
 {
-   
     private String vizier;
     private Integer treasury;
 
@@ -313,7 +312,7 @@ public class Tournament implements CARE
     public String getAllChallenges()
     {
         String s = "\n************ All Challenges ************\n";
-        for(Challenge tempChal: challenges){
+        for(Challenge tempChal: this.challenges){
             String chalInfo = tempChal.toString();
             s += chalInfo + "\n";
         }
@@ -321,7 +320,7 @@ public class Tournament implements CARE
     }
     
     
-       /** Retrieves the challenge represented by the challenge 
+    /** Retrieves the challenge represented by the challenge 
      * number.Finds a champion from the team who can meet the 
      * challenge. The results of meeting a challenge will be 
      * one of the following:  
@@ -406,7 +405,6 @@ public class Tournament implements CARE
 
     /** Add challenges into an ArrayList */
     private void setupChallenges()
-
     {
         Challenge c1 = new Challenge(1, ChallengeType.MAGIC, "Borg", 3, 100);
         Challenge c2 = new Challenge(2, ChallengeType.FIGHT, "Huns", 3, 120);
@@ -421,8 +419,7 @@ public class Tournament implements CARE
         Challenge c11 = new Challenge(11, ChallengeType.MAGIC, "Celt", 2, 250);
         Challenge c12 = new Challenge(12, ChallengeType.MYSTERY, "Celt", 1, 250);
 
-        Collections.addAll(challenges, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12);
-
+        Collections.addAll(this.challenges, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12);
     }
 
     /** Returns a challenge with the challenge no specified by the parameter
@@ -430,7 +427,7 @@ public class Tournament implements CARE
      **/
      private Challenge getAChallenge(int no)
      {
-        for(Challenge tempChal: challenges){
+        for(Challenge tempChal: this.challenges){
             int tempChalNo = tempChal.getNumber();
             if(tempChalNo == no){
                 return tempChal;
