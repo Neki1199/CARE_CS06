@@ -15,7 +15,7 @@ public class Dragon extends Champion
     /**
      * Constructor for objects of class Dragon
      */
-    public Dragon(String name, int cost, Boolean talks)
+    public Dragon(String name, Boolean talks)
     {
         super(name, 500, 7);
         this.talks = talks;

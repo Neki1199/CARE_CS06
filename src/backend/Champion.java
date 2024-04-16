@@ -60,7 +60,7 @@ public abstract class Champion
      * @param challenge is a ChallengeType to check for that specific challenge
      * @return a Boolean of false
      **/
-    public abstract boolean canMeet(ChallengeType var1);
+    public abstract boolean canMeet(ChallengeType type);
     
     /**Sets the ChampionsState state of the object's current state.
     *
