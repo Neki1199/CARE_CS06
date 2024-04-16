@@ -1,4 +1,7 @@
 package backend;
+
+import cwk4.ChallengeType;
+
 /**
  * A class representing the wizard object inheriting from Champion
  *
@@ -15,18 +18,10 @@ public class Wizard extends Champion
      * Constructor for objects of class Wizard
      */
      public Wizard(String name, int skillLevel, String spell, boolean necromancer) {
-        super(name, 0, skillLevel);
+        super(name, necromancer ? 400 : 300, skillLevel);
         this.spell = spell;
         this.necromancer = necromancer;
         
-        if (necromancer)
-        {
-            this.cost = 400;
-        }
-        else
-        {
-            this.cost = 300;
-        }
     }
 
     /**Returns a String name the wizards spell
@@ -45,41 +40,26 @@ public class Wizard extends Champion
         return necromancer;
     }
 
-    /**Returns a Boolean denoting if the champion can complete a magic task
-     * @return a Boolean of true
+    /**Returns a Boolean denoting if the champion can complete a challenge task
+     * @param challenge is a ChallengeType to check for that specific challenge
+     * @return a Boolean of false
      **/
-    public boolean getMagic()
+    public boolean canMeet(ChallengeType challenge)
     {
-         return true;   
+          return true;
     }
 
-    /**Returns a Boolean denoting if the champion can complete a magic task
-     * @return a Boolean of true
+    /**Returns a String representation of the state of the wizard objects,
+     * including the name of the champion, their cost,
+     * What its skill level is, the name of its signature spell, and whether it's a necromancer 
+     * 
+     * @return a String representation of the state of the objects,
+     * including the name of the champion, their cost,
+     * What its skill level is, the name of its signature spell, and whether it's a necromancer 
      **/
-    public boolean getFight()
-    {
-         return true;   
-    }
-
-    /**Returns a Boolean denoting if the champion can complete a magic task
-     * @return a Boolean of true
-     **/
-    public boolean getMystery()
-    {
-         return true;   
-    }
-
-        /**Returns a String representation of the state of the wizard objects,
-         * including the name of the champion, their cost,
-         * What its skill level is, the name of its signature spell, and whether it's a necromancer 
-         * 
-         * @return a String representation of the state of the objects,
-         * including the name of the champion, their cost,
-         * What its skill level is, the name of its signature spell, and whether it's a necromancer 
-         **/
     public String toString()
     {
-        return "Wizard (name='" + getName() + "', cost=" + getCost() + ", skillLevel=" + getSkillLevel() +
-                ", spell='" + spell + "', necromancer=" + necromancer + ")";
+        String top = super.toString();
+        return "Wizard: " + top.substring(9, top.length()-1) + ", Necromancer= " + this.necromancer + ", Special Spell= " + this.spell  + ")";
     }
 }

@@ -1,4 +1,8 @@
 package backend;
+
+import cwk4.ChallengeType;
+import cwk4.ChampionState;
+
 /**
  * A Base Class which the other champions are built off
  *
@@ -9,10 +13,11 @@ public abstract class Champion
 {
     // instance variables - replace the example below with your own
     private String name;
-    int cost;
-    int skillLevel;
+    private int cost;
+    private int skillLevel;
+    private ChampionState state;
     
-
+    
     /**
      * Constructor for objects of class Champion
      */
@@ -21,6 +26,7 @@ public abstract class Champion
         this.name = name;
         this.cost = cost;
         this.skillLevel = skillLevel;
+        this.state = ChampionState.WAITING;
     }
     
     /**Returns a String of the object's Name.
@@ -50,20 +56,50 @@ public abstract class Champion
         return this.skillLevel;
     }
 
-     /**An abstract class that will return a boolean for if the class can do something.
+    /**An abstract class that Returns a Boolean denoting if the champion can complete a challenge task
+     * @param challenge is a ChallengeType to check for that specific challenge
+     * @return a Boolean of false
      **/
-    public abstract boolean getMagic();
+    public abstract boolean canMeet(ChallengeType var1);
+    
+    /**Sets the ChampionsState state of the object's current state.
+    *
+    * @param state represents the champions current state.
+    **/
+    public void setState(ChampionState state) 
+    {
+        this.state = state;
+    }
 
-     /**An abstract class that will return a boolean for if the class can do something.
+    /**Returns a ChampionsState of the object's current state.
+    *
+    * @return a ChampionsState of the object's current state.
+    **/
+    public ChampionState getState() 
+    {
+        return this.state;
+    }
+  
+    /**Returns a boolean of the champion's current active state.
+     *
+     * @return a boolean of the champion's current active state.
      **/
-    public abstract boolean getFight();
-
-     /**An abstract class that will return a boolean for if the class can do something.
+    public boolean isActive() 
+    {
+        return this.state == ChampionState.ENTERED;
+    }
+  
+    /**Returns a String representation of the state of the champion objects,
+     * including the name of the champion, their cost,
+     * What its skill level is
+     * 
+     * @return a String representation of the state of the objects,
+     * including the name of the champion, their cost,
+     * What its skill level is, 
      **/
-    public abstract boolean getMystery();
-
-    /**Will return a String representation of the details of the champion,
-     * including the Whatever attributes the child class has
-     **/
-    public abstract String toString();
+     public String toString() 
+     {
+        return "\nChampion: (Name='" + this.name + "', Cost=" + this.cost + ", SkillLevel=" + this.skillLevel + ", State: " + this.state.toString() + ")";
+    
+     }
 }

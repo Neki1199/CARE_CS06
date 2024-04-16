@@ -1,4 +1,7 @@
 package backend;
+
+import cwk4.ChallengeType;
+
 /**
  * A class representing the dragon object inheriting from Champion
  *
@@ -19,41 +22,34 @@ public class Dragon extends Champion
         
     }
 
-    /**Returns a Boolean denoting if the champion can complete a magic task
+    /**Returns a Boolean denoting if the champion can complete a challenge task
+     * @param challenge is a ChallengeType to check for that specific challenge
      * @return a Boolean of false
      **/
-    public boolean getMagic()
+    public boolean canMeet(ChallengeType challenge)
     {
-         return false;   
-    }
-
-    /**Returns a Boolean denoting if the champion can complete a fight task
-     * @return a Boolean of true
-     **/
-    public boolean getFight()
-    {
-         return true;   
-    }
-
-    /**Returns a Boolean denoting if the champion can complete a mystery task
-     * @return a Boolean of the object's talk value
-     **/
-    public boolean getMystery()
-    {
-         return this.talks;   
+          if (challenge == ChallengeType.FIGHT)
+          {
+               return true;
+          }
+          else if (challenge == ChallengeType.MYSTERY && this.talks)
+          {
+               return true;
+          }
+          return false;
     }
     
     /**Returns a String representation of the state of the objects,
          * including the name of the champion, their cost,
-         * What it's cots is, and whether it talks 
+         * What it's cost is, and whether it talks 
          * 
          * @return a String representation of the state of the objects,
          * including the name of the champion, thier cost,
-         * What it's cots is, and whether it talks 
+         * What it's cost is, and whether it talks 
          **/
     public String toString()
     {
-        return "Dragon (name='" + getName() + "', cost=" + getCost() + ", skillLevel=" + getSkillLevel() +
-                ", talks='" + talks + ")";
-    }
+          String top = super.toString();
+          return "Dragon: " + top.substring(9, top.length()-1) + ", Talks= " + this.talks + ")";
+     }
 }
