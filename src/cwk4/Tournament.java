@@ -389,6 +389,7 @@ public class Tournament implements CARE
 
     //****************** private methods for Task 3 functionality*******************
     //*******************************************************************************
+    /** Add Champions into a map where (name, champion)  */
     private void setupChampions()
     {
         Wizard c1 = new Wizard("Ganfrank", 7, "transmutation", true);
@@ -397,15 +398,35 @@ public class Tournament implements CARE
         Wizard c2 = new Wizard("Rudolf", 6, "invisiblity", true);
         reserves.put("Rudolf", c2);
 
-        Warrior c3 = new Warrior("Elblond", 150,"Sword");
+        Warrior c3 = new Warrior("Elblond", 150,"sword");
         reserves.put("Elblond", c3);
 
-        Warrior c4 = new Warrior("Flimsi", 150,"Sword");
+        Warrior c4 = new Warrior("Flimsi", 150,"sword");
         reserves.put("Flimsi", c4);
 
         Dragon c5 = new Dragon("Drabina", false);
         reserves.put("Drabina", c5);
-        
+
+        Dragon c6 = new Dragon("Golum", true);
+        reserves.put("Golum", c6);
+
+        Warrior c7 = new Warrior("Argon", 900,"mace");
+        reserves.put("Argon", c7);
+
+        Wizard c8 = new Wizard("Neon", 2, "translocation", false);
+        reserves.put("Neon", c8);
+
+        Dragon c9 = new Dragon("Xenon", true);
+        reserves.put("Xenon", c9);
+
+        Warrior c10 = new Warrior("Atlanta", 500,"bow");
+        reserves.put("Atlanta", c10);
+
+        Wizard c11 = new Wizard("Krypton", 7, "fireballs", false);
+        reserves.put("Krypton", c11);
+
+        Wizard c12 = new Wizard("Hedwig", 6, "flying", true);
+        reserves.put("Hedwig", c12);
 
     }
 
