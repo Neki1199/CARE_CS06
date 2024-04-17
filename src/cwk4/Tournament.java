@@ -394,11 +394,17 @@ public class Tournament implements CARE
         Wizard c1 = new Wizard("Ganfrank", 7, "transmutation", true);
         reserves.put("Ganfrank", c1);
 
-        Warrior c2 = new Warrior("Bob2", 700,"Axe");
-        reserves.put("Bob2", c2);
+        Wizard c2 = new Wizard("Rudolf", 6, "invisiblity", true);
+        reserves.put("Rudolf", c2);
 
-        Dragon c3 = new Dragon("Bob", true);
-        reserves.put("Bob3", c3);
+        Warrior c3 = new Warrior("Elblond", 150,"Sword");
+        reserves.put("Elblond", c3);
+
+        Warrior c4 = new Warrior("Flimsi", 150,"Sword");
+        reserves.put("Flimsi", c4);
+
+        Dragon c5 = new Dragon("Drabina", false);
+        reserves.put("Drabina", c5);
         
 
     }
