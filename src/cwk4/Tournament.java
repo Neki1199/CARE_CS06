@@ -427,7 +427,6 @@ public class Tournament implements CARE
 
         Wizard c12 = new Wizard("Hedwig", 1, "flying", true);
         reserves.put("Hedwig", c12);
-
     }
 
     /** Add challenges into an ArrayList */
@@ -471,7 +470,6 @@ public class Tournament implements CARE
             {
                 return champs;
             }
-            
         }
          return null;
      }
