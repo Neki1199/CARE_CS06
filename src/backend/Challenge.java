@@ -65,8 +65,8 @@ public class Challenge
         return skill;
     }
 
-    /**Returns an int of the skill level of the challenge
-     * @return int of the skill requirement
+    /**Returns an int of the challenge reward
+     * @return int of reward
      **/
     public int getReward() 
     {
