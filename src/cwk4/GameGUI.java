@@ -2,7 +2,6 @@ package cwk4;
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
-import java.util.*;
 
 /**
  * Provide a GUI interface for the game
@@ -16,7 +15,6 @@ public class GameGUI
     private JFrame myFrame = new JFrame("Game GUI");
     private JTextArea listing = new JTextArea();
     private JScrollPane scroll = new JScrollPane(listing);  // to scroll listing
-    private JLabel codeLabel = new JLabel ();
     private JButton meetBtn = new JButton("Meet Challenge");
     private JButton viewBtn = new JButton("View State");
     private JButton clearBtn = new JButton("Clear");
@@ -110,7 +108,9 @@ public class GameGUI
         challengeMenu.add(listChallengeItem);
     }
 
-    // Menu bar action listeners
+    /**
+     * Create the menu bar, list reserves action listener
+     */
     private class ListReserveHandler implements ActionListener
     {
         public void actionPerformed(ActionEvent e) 
@@ -122,7 +122,9 @@ public class GameGUI
         }
     }
 
-    // Action listener to list the details of all champions in the team
+    /**
+     * Create the menu bar, list team action listener
+     */
     private class ListTeamHandler implements ActionListener
     {
         public void actionPerformed(ActionEvent e)
@@ -134,7 +136,9 @@ public class GameGUI
         }
     }
 
-    // Action listener to get one champion details. First checks if the champion exists.
+    /**
+     * Create the menu bar, view a champion action listener
+     */
     private class ViewAChampionHandler implements ActionListener
     {
         public void actionPerformed(ActionEvent e)
@@ -148,7 +152,9 @@ public class GameGUI
         }
     }
 
-    // Action listener to enter a champion to the team if it exists in the reserve.
+    /**
+     * Create the menu bar, enter a champion to the team action listener
+     */
     private class EnterChampionHandler implements ActionListener
     {
         public void actionPerformed(ActionEvent e)
@@ -167,6 +173,9 @@ public class GameGUI
         }
     }
 
+    /**
+     * Create the menu bar, list all challenges action listener
+     */
     private class ListChallengesHandler implements ActionListener
     {
         public void actionPerformed(ActionEvent e)
@@ -178,7 +187,9 @@ public class GameGUI
         }
     }
 
-    // eastPanel action listeners
+    /**
+     * East panel, view action listener
+     */
     private class ViewBtnHandler implements ActionListener
     {
         public void actionPerformed(ActionEvent e)
@@ -189,7 +200,10 @@ public class GameGUI
             listing.setCaretPosition(0);
         }
     }
-   
+
+    /**
+     * East panel, clear action listener
+     */
     private class ClearBtnHandler implements ActionListener
     {
         public void actionPerformed(ActionEvent e) 
@@ -197,28 +211,33 @@ public class GameGUI
             listing.setText(" ");
         }
     }
-    
+
+    /**
+     * East panel, meet challenge action listener
+     */
     private class MeetBtnHandler implements ActionListener
     {
         public void actionPerformed(ActionEvent e) 
         { 
             int result = -1;
-            String answer = "no such challenge";
+            String answer = "No such challenge";
             String inputValue = JOptionPane.showInputDialog("Challenge number ?: ");
             int num = Integer.parseInt(inputValue);
             result = gp.meetChallenge(num);
             switch (result)
             {
-                case 0:answer = "challenge won by champion"; break;
-                case 1:answer = "challenge lost on skills, champion disqualified";break;
-                case 2:answer = "challenge lost as no suitable champion is available";break;
-                case 3:answer = "challenge lost and vizier completely defeated";break;
+                case 0:answer = "Challenge won by champion"; break;
+                case 1:answer = "Challenge lost on skills, champion disqualified";break;
+                case 2:answer = "Challenge lost as no suitable champion is available";break;
+                case 3:answer = "Challenge lost and vizier completely defeated";break;
             }
-            
             JOptionPane.showMessageDialog(myFrame,answer);    
         }
     }
-    
+
+    /**
+     * East panel, quit action listener
+     */
     private class QuitBtnHandler implements ActionListener
     {
         public void actionPerformed(ActionEvent e) 
@@ -233,6 +252,5 @@ public class GameGUI
             }              
         }
     }
-    
 }
    
