@@ -46,12 +46,13 @@ public class GameUI
                 } 
                 else if (choice == 4)
                 {
-                    System.out.println("Please pick from the team below.");
+                    System.out.println("Please pick from the champions below.");
                     System.out.println(tr.getReserve());
                     int userNumber = 3;
+                    // For this option I went with putting in a loop as I felt it would be the most commonly used one.
                     while (userNumber != 0)
                     {
-                        System.out.println("Enter Champion name, if you want to exit enter Exit");
+                        System.out.println("Enter champions name you want to add to your team, if you want to exit enter Exit");
                         String championName = (myIn.nextLine()).trim();
 
                         if (championName == "Exit"){
@@ -60,13 +61,9 @@ public class GameUI
                         userNumber = tr.enterChampion(championName);
                         if (userNumber == -1){
                             System.out.println("That Champion does not exisit");
-                        }
-
-                        if (userNumber == 1){
+                        }else if (userNumber == 1){
                             System.out.println("That Champion is not in the reserves");
-                        }
-
-                        if (userNumber == 2){
+                        }else if (userNumber == 2){
                             System.out.println("Your too poor fam (You don't have enough money in the treasury");
                         }
                     }
@@ -75,17 +72,59 @@ public class GameUI
                 }
                 else if (choice == 5)
                 {
+                    System.out.println("Please pick from the challenges below.");
+                    System.out.println(tr.getAllChallenges());
+                    System.out.println("Enter challenges number, if you want to exit enter 100");
+                    // challengeNum is the number of the challenge used to select it in
+                    int challengeNum = myIn.nextInt();
+
+                    System.out.println("Challenge selected is");
+                    System.out.println(tr.getChallenge(challengeNum));
+                    int outputNum = tr.meetChallenge(challengeNum);
+
+                    if (outputNum == 0) {
+                        System.out.println("You won! You gained a reward to your treasury");
+                    } else if (outputNum == 1) {
+                        System.out.println("You lost on skill! You have an amount removed from your treasury");
+                    } else if (outputNum == 2) {
+                        System.out.println("No champion to take on this fight! You have been deducted an amount form your treasury");
+                    } else if (outputNum == 3) {
+                        System.out.println("You have been defeated.... better luck next time");
+                    } else {
+                        System.out.println("That challenge is not in list");
+                    }
+                    System.out.print("Your money after this challenge is");
+                    System.out.println(tr.getMoney());
+
                     // provide code here
                     // output should be meaningful
                 }
                 else if (choice==6)
                 {
+                    // retire champions
                     // provide code here
                     // output should be meaningful
+                    System.out.println("Please pick from the team below.");
+                    System.out.println(tr.getTeam());
+                    System.out.println("Enter champion name, if you want to exit enter Exit");
+                    String championName = (myIn.nextLine()).trim();
+                    int outputNum = tr.retireChampion(championName);
+                    if (outputNum == 0){
+                        System.out.println("The champion has been retired");
+                    } else if (outputNum == 1) {
+                        System.out.println("That champion has been disqualified already");
+                    } else if (outputNum == 2) {
+                        System.out.println("That champion is not in your team");
+                    } else{
+                        System.out.println("No such champion is in the game");
+                    }
+
                 }  
                 else if (choice==7)
                 {
+                    // View game state
                     // provide code here
+                    System.out.println(tr.toString());
                 }
                 else if (choice==8)
                 {
