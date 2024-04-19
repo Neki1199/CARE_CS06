@@ -395,13 +395,13 @@ public class Tournament implements CARE
         Wizard c1 = new Wizard("Ganfrank", 7, "transmutation", true);
         reserves.put("Ganfrank", c1);
 
-        Wizard c2 = new Wizard("Rudolf", 6, "invisiblity", true);
+        Wizard c2 = new Wizard("Rudolf", 6, "invisibility", true);
         reserves.put("Rudolf", c2);
 
         Warrior c3 = new Warrior("Elblond", 150,"sword");
         reserves.put("Elblond", c3);
 
-        Warrior c4 = new Warrior("Flimsi", 150,"sword");
+        Warrior c4 = new Warrior("Flimsi", 200,"bow");
         reserves.put("Flimsi", c4);
 
         Dragon c5 = new Dragon("Drabina", false);
@@ -422,12 +422,11 @@ public class Tournament implements CARE
         Warrior c10 = new Warrior("Atlanta", 500,"bow");
         reserves.put("Atlanta", c10);
 
-        Wizard c11 = new Wizard("Krypton", 7, "fireballs", false);
+        Wizard c11 = new Wizard("Krypton", 8, "fireballs", false);
         reserves.put("Krypton", c11);
 
-        Wizard c12 = new Wizard("Hedwig", 6, "flying", true);
+        Wizard c12 = new Wizard("Hedwig", 1, "flying", true);
         reserves.put("Hedwig", c12);
-
     }
 
     /** Add challenges into an ArrayList */
@@ -471,7 +470,6 @@ public class Tournament implements CARE
             {
                 return champs;
             }
-            
         }
          return null;
      }
