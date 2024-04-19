@@ -82,17 +82,8 @@ public class GameUI
                     System.out.println(tr.getChallenge(challengeNum));
                     int outputNum = tr.meetChallenge(challengeNum);
 
-                    if (outputNum == 0) {
-                        System.out.println("You won! You gained a reward to your treasury");
-                    } else if (outputNum == 1) {
-                        System.out.println("You lost on skill! You have an amount removed from your treasury");
-                    } else if (outputNum == 2) {
-                        System.out.println("No champion to take on this fight! You have been deducted an amount form your treasury");
-                    } else if (outputNum == 3) {
-                        System.out.println("You have been defeated.... better luck next time");
-                    } else {
-                        System.out.println("That challenge is not in list");
-                    }
+                    System.out.println(processChallengeResult(outputNum));
+
                     System.out.print("Your money after this challenge is");
                     System.out.println(tr.getMoney());
 
