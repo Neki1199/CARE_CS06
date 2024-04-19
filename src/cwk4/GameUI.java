@@ -51,8 +51,11 @@ public class GameUI
                     int userNumber = 3;
                     while (userNumber != 0)
                     {
-                        System.out.println("Enter Champion name");
+                        System.out.println("Enter Champion name, if you want to exit enter Exit");
                         String championName = (myIn.nextLine()).trim();
+                        if (championName == "Exit"){
+                            break;
+                        }
                         userNumber = tr.enterChampion(championName);
                         if (userNumber == -1){
                             System.out.println("That Champion does not exisit");
