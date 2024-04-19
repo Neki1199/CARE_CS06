@@ -53,6 +53,7 @@ public class GameUI
                     {
                         System.out.println("Enter Champion name, if you want to exit enter Exit");
                         String championName = (myIn.nextLine()).trim();
+
                         if (championName == "Exit"){
                             break;
                         }
