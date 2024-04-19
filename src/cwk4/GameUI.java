@@ -45,9 +45,28 @@ public class GameUI
                     System.out.println(tr.getChampionDetails(ref));
                 } 
                 else if (choice == 4)
-                {   
-                    // provide code here
-                    // output should be meaningful
+                {
+                    System.out.println("Please pick from the team below.");
+                    System.out.println(tr.getReserve());
+                    int userNumber = 3;
+                    while (userNumber != 0)
+                    {
+                        System.out.println("Enter Champion name");
+                        String championName = (myIn.nextLine()).trim();
+                        userNumber = tr.enterChampion(championName);
+                        if (userNumber == -1){
+                            System.out.println("That Champion does not exisit");
+                        }
+
+                        if (userNumber == 1){
+                            System.out.println("That Champion is not in the reserves");
+                        }
+
+                        if (userNumber == 2){
+                            System.out.println("Your too poor fam (You don't have enough money in the treasury");
+                        }
+                    }
+
 
                 }
                 else if (choice == 5)
