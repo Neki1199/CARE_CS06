@@ -8,7 +8,7 @@ import java.io.*;
  * as required for 5COM2007 Cwk 4
  * 
  * @author Thomas B., Yanelky C., Derick O., Frederica T.
- * @version 16/04/2024
+ * @version 19/04/2024
  */
 
 public class Tournament implements CARE
@@ -69,7 +69,7 @@ public class Tournament implements CARE
     public String toString()
     {
         return "************** State of Game **************\nVizier: " + this.vizier +  "\nTreasury: " + this.treasury + "\nDefeated: " +
-                isDefeated() + this.getTeam() + "\n";
+                isDefeated() + this.getTeam() + this.getReserves() + "\n";
     }
     
     
@@ -377,6 +377,10 @@ public class Tournament implements CARE
         return outcome;
     }
 
+
+    /**Returns a boolean if the champions exist
+     * @return  a boolean representation if the champions exists
+     **/
     private boolean isChampion(String nme)
     {
         if(team.containsKey(nme) || reserves.containsKey(nme))
@@ -384,6 +388,23 @@ public class Tournament implements CARE
             return true;
         }
         return false;
+    }
+
+
+    /**Returns a String representation of the champions in the reserves
+     * or the message "No champions in reserves"
+     * @return  a String representation of the champions in the reserves
+     **/
+
+    private String getReserves() {
+        String s = "\n************ Champions in Reserve ********";
+        if (this.reserves.size() >= 1) {
+            for (Champion i : reserves.values()) {
+                s += "\n" + i.toString();
+            }
+            return s;
+        }
+        return "\nNo champions in reserve";
     }
  
 
