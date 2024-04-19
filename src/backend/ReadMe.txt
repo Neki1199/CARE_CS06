@@ -1,2 +1,2 @@
-These are the backend classes so far. To use in other classes just use:
+These are the backend classes for the game. To use in other classes use:
 import backend.*;

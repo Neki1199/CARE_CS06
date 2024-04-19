@@ -3,59 +3,55 @@ package backend;
 import cwk4.ChallengeType;
 
 /**
- * A class representing the wizard object inheriting from Champion
+ * A class representing the Wizard object inherited from Champion
  *
- * @author (Thomas)
- * @version (08/04/24)
+ * @author Thomas B.
+ * @version 08/04/24
  */
 public class Wizard extends Champion
 {
-
     private String spell;
     private boolean necromancer;
 
-    /**
-     * Constructor for objects of class Wizard
-     */
+    /** Constructor for objects of class Wizard
+     * If the Wizard is a necromancer, entry fee is set to 400, 300 otherwise
+     * @param name String of the Wizard name
+     * @param skillLevel int of the skill level
+     * @param spell String of the Wizard's special spell
+     * @param necromancer Boolean true if the Wizard is necromancer, or false
+     **/
      public Wizard(String name, int skillLevel, String spell, boolean necromancer) {
         super(name, necromancer ? 400 : 300, skillLevel);
         this.spell = spell;
         this.necromancer = necromancer;
-        
     }
 
-    /**Returns a String name the wizards spell
-     * @return a String of spell
+    /** Returns a String of the Wizard's spell
+     * @return a String of the special spell
      **/
     public String getSpell() 
     {
         return spell;
     }
 
-    /**Returns a Boolean of if the wizard is a necromancer
-     * @return a Boolean of necromance
+    /** Returns a Boolean  true if the Wizard is a necromancer
+     * @return a Boolean true if the Wizard is a necromancer, false if not
      **/
-    public boolean isNecromancer() 
-    {
-        return necromancer;
-    }
+    public boolean isNecromancer() { return necromancer; }
 
-    /**Returns a Boolean denoting if the champion can complete a challenge task
+    /** Returns a Boolean denoting if the champion can complete a challenge task
      * @param challenge is a ChallengeType to check for that specific challenge
-     * @return a Boolean of false
+     * @return Boolean true always, as the Wizard can meet all type of challenges
      **/
     public boolean canMeet(ChallengeType challenge)
     {
           return true;
     }
 
-    /**Returns a String representation of the state of the wizard objects,
-     * including the name of the champion, their cost,
-     * What its skill level is, the name of its signature spell, and whether it's a necromancer 
-     * 
-     * @return a String representation of the state of the objects,
-     * including the name of the champion, their cost,
-     * What its skill level is, the name of its signature spell, and whether it's a necromancer 
+    /** Returns a String representation of the state of the champion,
+     * including the name of the champion, their cost, skill level, and state
+     * In addition: if is necromancer, special spell and type of champion
+     * @return a String about the Wizard details
      **/
     public String toString()
     {

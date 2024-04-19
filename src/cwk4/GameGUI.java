@@ -33,9 +33,8 @@ public class GameGUI
     }
     
 
-    /**
-     * Create the Swing frame and its content.
-     */
+    /** Create the Swing frame and its content.
+     **/
     private void makeFrame()
     {    
         myFrame.setLayout(new BorderLayout());
@@ -70,9 +69,8 @@ public class GameGUI
         myFrame.setVisible(true);
     }
     
-    /**
-     * Create the main frame's menu bar.
-     */
+    /** Create the main frame's menu bar.
+     **/
     private void makeMenuBar(JFrame frame)
     {
         JMenuBar menubar = new JMenuBar();
@@ -108,9 +106,8 @@ public class GameGUI
         challengeMenu.add(listChallengeItem);
     }
 
-    /**
-     * Create the menu bar, list reserves action listener
-     */
+    /** Create the menu bar, list reserves action listener
+     **/
     private class ListReserveHandler implements ActionListener
     {
         public void actionPerformed(ActionEvent e) 
@@ -122,9 +119,8 @@ public class GameGUI
         }
     }
 
-    /**
-     * Create the menu bar, list team action listener
-     */
+    /** Create the menu bar, list team action listener
+     **/
     private class ListTeamHandler implements ActionListener
     {
         public void actionPerformed(ActionEvent e)
@@ -136,9 +132,8 @@ public class GameGUI
         }
     }
 
-    /**
-     * Create the menu bar, view a champion action listener
-     */
+    /** Create the menu bar, view a champion action listener
+     **/
     private class ViewAChampionHandler implements ActionListener
     {
         public void actionPerformed(ActionEvent e)
@@ -152,9 +147,8 @@ public class GameGUI
         }
     }
 
-    /**
-     * Create the menu bar, enter a champion to the team action listener
-     */
+    /** Create the menu bar, enter a champion to the team action listener
+     **/
     private class EnterChampionHandler implements ActionListener
     {
         public void actionPerformed(ActionEvent e)
@@ -173,9 +167,8 @@ public class GameGUI
         }
     }
 
-    /**
-     * Create the menu bar, list all challenges action listener
-     */
+    /** Create the menu bar, list all challenges action listener
+     **/
     private class ListChallengesHandler implements ActionListener
     {
         public void actionPerformed(ActionEvent e)
@@ -187,9 +180,8 @@ public class GameGUI
         }
     }
 
-    /**
-     * East panel, view action listener
-     */
+    /** East panel, view action listener
+     **/
     private class ViewBtnHandler implements ActionListener
     {
         public void actionPerformed(ActionEvent e)
@@ -201,9 +193,8 @@ public class GameGUI
         }
     }
 
-    /**
-     * East panel, clear action listener
-     */
+    /** East panel, clear action listener
+     **/
     private class ClearBtnHandler implements ActionListener
     {
         public void actionPerformed(ActionEvent e) 
@@ -212,9 +203,8 @@ public class GameGUI
         }
     }
 
-    /**
-     * East panel, meet challenge action listener
-     */
+    /** East panel, meet challenge action listener
+     **/
     private class MeetBtnHandler implements ActionListener
     {
         public void actionPerformed(ActionEvent e) 
@@ -235,9 +225,8 @@ public class GameGUI
         }
     }
 
-    /**
-     * East panel, quit action listener
-     */
+    /** East panel, quit action listener
+     **/
     private class QuitBtnHandler implements ActionListener
     {
         public void actionPerformed(ActionEvent e) 

@@ -23,7 +23,6 @@ public class GameUI
         {
             System.out.println("Enter vizier's name");
             String s = myIn.nextLine();
-            //myIn.nextLine();
             //tr = new Tournament(s); // create
             tr = new Tournament(s,"challengesAM.txt"); // alternative create task 3.5
             choice = 100;
@@ -40,7 +39,7 @@ public class GameUI
                 }
                 else if (choice == 3)
                 {
-                    System.out.println("Enter Champion name");
+                    System.out.println("Enter Champion name: ");
                     String ref = (myIn.nextLine()).trim();
                     System.out.println(tr.getChampionDetails(ref));
                 } 
@@ -55,20 +54,20 @@ public class GameUI
                         System.out.println("Enter champions name you want to add to your team, if you want to exit enter Exit");
                         String championName = (myIn.nextLine()).trim();
 
-                        if (championName == "Exit"){
+                        if (championName.equals("Exit")){
                             break;
                         }
                         userNumber = tr.enterChampion(championName);
                         if (userNumber == -1){
-                            System.out.println("That Champion does not exisit");
+                            System.out.println("That Champion does not exist");
                         }else if (userNumber == 1){
                             System.out.println("That Champion is not in the reserves");
                         }else if (userNumber == 2){
-                            System.out.println("Your too poor fam (You don't have enough money in the treasury");
+                            System.out.println("Your too poor fam (You don't have enough money in the treasury)");
+                        }else{
+                            System.out.println("Champion enters the Vizier's team!");
                         }
                     }
-
-
                 }
                 else if (choice == 5)
                 {
@@ -78,7 +77,7 @@ public class GameUI
                     // challengeNum is the number of the challenge used to select it in
                     int challengeNum = myIn.nextInt();
 
-                    System.out.println("Challenge selected is");
+                    System.out.println("Challenge selected is ");
                     System.out.println(tr.getChallenge(challengeNum));
                     int outputNum = tr.meetChallenge(challengeNum);
 
@@ -86,15 +85,9 @@ public class GameUI
 
                     System.out.print("Your money after this challenge is");
                     System.out.println(tr.getMoney());
-
-                    // provide code here
-                    // output should be meaningful
                 }
                 else if (choice==6)
                 {
-                    // retire champions
-                    // provide code here
-                    // output should be meaningful
                     System.out.println("Please pick from the team below.");
                     System.out.println(tr.getTeam());
                     System.out.println("Enter champion name, if you want to exit enter Exit");
@@ -109,13 +102,10 @@ public class GameUI
                     } else{
                         System.out.println("No such champion is in the game");
                     }
-
                 }  
                 else if (choice==7)
                 {
-                    // View game state
-                    // provide code here
-                    System.out.println(tr.toString());
+                    System.out.println(tr);
                 }
                 else if (choice==8)
                 {
@@ -136,7 +126,7 @@ public class GameUI
                     CARE tr2= tr.loadGame(filename);
                     if (tr2 != null)
                     {
-                        System.out.println(tr2.toString());
+                        System.out.println(tr2);
                     }
                     else
                     {
