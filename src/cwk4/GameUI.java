@@ -83,7 +83,7 @@ public class GameUI
 
                     System.out.println(processChallengeResult(outputNum));
 
-                    System.out.print("Your money after this challenge is");
+                    System.out.print("Your money after this challenge is ");
                     System.out.println(tr.getMoney());
                 }
                 else if (choice==6)

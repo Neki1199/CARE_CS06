@@ -61,8 +61,16 @@ public class Tournament implements CARE
      **/
     public String toString()
     {
-        return "************** State of Game **************\nVizier: " + this.vizier +  "\nTreasury: " +
-                this.treasury + "\nDefeated: " + isDefeated() + this.getTeam() + this.getReserve() + "\n";
+        String temp =  "** State of Game **";
+        temp += "\nVizier: " + this.vizier +  "\nTreasury: " + this.treasury;
+
+        if (isDefeated()) {
+            temp += "\nDefeated: Defeated";
+        } else {
+            temp += "\nDefeated: Is OK";
+        }
+        temp += this.getTeam() + "\n";
+        return temp;
     }
 
     /** Returns true if Treasury <=0 and the vizier's team has no
