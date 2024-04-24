@@ -39,9 +39,6 @@ public class T5MeetChallengeTest {
     public void tearDown() {
     }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
     
 //Wizards    
     // Wizard facing magic
@@ -258,11 +255,113 @@ public class T5MeetChallengeTest {
         int actual = game.getMoney();
         assertEquals(expected, actual);
     }
-    
-    //Dragons - write your own tests
-    
-  
-    
-    
 
+    // Dragons - OWN TESTS
+    // Dragons facing magic - not allowed
+    @Test
+    public void dragonFacingMagicNotAllowed() {
+        int expected = 2;
+        game.enterChampion("Drabina");
+        int actual = game.meetChallenge(4);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void dragonFacingMagicNotAllowedMoneyDeducted() {
+        int expected = 1000-500-200;
+        game.enterChampion("Drabina");
+        game.meetChallenge(4);
+        int actual = game.getMoney();
+        assertEquals(expected, actual);
+    }
+
+    // Dragons facing fight
+    @Test
+    public void dragonFacingFightAllowedWins() {
+        int expected = 0;
+        game.enterChampion("Drabina");
+        int actual = game.meetChallenge(10);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void dragonFacingFightAllowedWinsMoneyAdded() {
+        int expected = 1000-500+300;
+        game.enterChampion("Drabina");
+        game.meetChallenge(10);
+        int actual = game.getMoney();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void dragonFacingFightAllowedLosesOnSkill() {
+        int expected = 1;
+        game.enterChampion("Drabina");
+        int actual = game.meetChallenge(8);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void dragonFacingFightAllowedLosesMoneyDeducted() {
+        int expected = 1000-500-170;
+        game.enterChampion("Drabina");
+        game.meetChallenge(8);
+        int actual = game.getMoney();
+        assertEquals(expected, actual);
+    }
+
+    // Dragons facing mystery - if they do not talk (not allowed)
+    @Test
+    public void dragonFacingMysteryNotAllowed() {
+        int expected = 2;
+        game.enterChampion("Drabina");
+        int actual = game.meetChallenge(3);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void dragonFacingMysteryNotAllowedMoneyDeducted() {
+        int expected = 1000-500-150;
+        game.enterChampion("Drabina");
+        game.meetChallenge(3);
+        int actual = game.getMoney();
+        assertEquals(expected, actual);
+    }
+
+    //Dragons facing mystery - if they talk (allowed)
+    // win
+    @Test
+    public void dragonFacingMysteryAllowed() {
+        int expected = 0;
+        game.enterChampion("Golum");
+        int actual = game.meetChallenge(3);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void dragonFacingMysteryAllowedMoneyAdded() {
+        int expected = 1000-500+150;
+        game.enterChampion("Golum");
+        game.meetChallenge(3);
+        int actual = game.getMoney();
+        assertEquals(expected, actual);
+    }
+
+    // lost on skills
+    @Test
+    public void dragonFacingMysteryAllowedLost() {
+        int expected = 1;
+        game.enterChampion("Golum");
+        int actual = game.meetChallenge(9);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void dragonFacingMysteryAllowedMoneyDeductedLost() {
+        int expected = 1000-500-300;
+        game.enterChampion("Golum");
+        game.meetChallenge(9);
+        int actual = game.getMoney();
+        assertEquals(expected, actual);
+    }
 }
